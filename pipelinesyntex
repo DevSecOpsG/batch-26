@@ -1,0 +1,33 @@
+pipeline {
+     agent any
+     stages{
+        stage('git clone'){
+          steps{
+                git branch: 'main', url: 'https://github.com/DevSecOpsG/Pet-application-ci-maven.git '
+           }
+        }
+     }
+ }
+ 
+ -----------------
+ 
+pipeline {
+agent any
+    stages {
+        stage('Git clone') {
+            steps {
+            git branch: 'main', url: 'https://github.com/DevSecOpsG/helloworldsimplejavaprogram'
+            }
+        }
+        stage('Build'){
+            steps{
+            sh 'javac helloworld.java'
+            }
+        }
+        stage('Run'){
+            steps{
+            sh 'java Simple'
+            }
+        }
+    }
+}
