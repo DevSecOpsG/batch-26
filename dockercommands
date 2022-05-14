@@ -1,0 +1,83 @@
+sudo -i
+apt-get update
+apt install docker.io
+
+
+hello-world  - image  docker hub 
+
+image run  -- image run _> container 
+
+docker pull hello-world
+docker run hello-world
+
+docker pull ubuntu  - only pull 
+docker run ubuntu    - pull + run 
+docker run -it centos 
+
+
+apt install git-all 
+apt install ansible
+apt install python
+
+
+ubuntu    - 75  mb in docker    VM -- 2 GB 
+centoos        231MB  in docker                     vm - 6.6 GB
+
+smalles size of OS - alpine   -  5.57MB
+
+docker run nginx
+
+docker run -p 80:80 nginx
+
+index.html --- home page of HTML 
+
+docker run --name docker-nginxbatch26 -p 80:80 nginx
+
+mkdir -p ~/docker-nginx/html
+cd ~/docker-nginx/html
+vi index.html
+
+
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <title>Docker nginx Tutorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello Learning team batch26 runninh html code</h1>
+      <p>This nginx page is brought to you by Docker in front of shilpi abhishek n gayatri </p>
+    </div>
+  </body>
+</html>
+
+
+
+docker run --name docker-nginx -p 80:80 nginx
+
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+
+
+
+java issue 
+Ip issue 
+password 
+java issue
+
+ 
+
+docker run --name docker-jenkins -p 8080:8080 jenkins/jenkins
+
+docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+
+
+jenkins/jenkins:latest
+
+
+
+os - ubuntu
+java 
+apdate 
+curl key 
+adding key in soure 
+apt install jenkins 
