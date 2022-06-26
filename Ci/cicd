@@ -1,0 +1,92 @@
+sudo apt-get update &&  sudo apt install docker.io -y
+
+
+--------------
+from jenkins/jenkins:lts
+USER root
+RUN apt-get update -qq \
+    && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+RUN apt-get update  -qq \
+    && apt-get install docker.io -y
+RUN usermod -aG docker jenkins
+
+
+--------------------
+
+docker image build -t jenkins-docker .
+
+---------------
+
+docker images
+docker ps
+
+
+docker run -d -p 8080:8080 jenkins-docker
+docker container run -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock jenkins-docker
+
+
+-------------
+docker run --name devopsexample -d -p 2222:2222 vickeyyvickey/myapplication:latest
+
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
+cd -- 1 Started by user admin   -- Cdelivery 
+
+
+cd 2  Started by upstream project "ci" build number 5      -- cdeployment 
+-----------------
+
+[Pipeline] End of Pipeline
+Triggering a new build of cd #2
+Finished: SUCCESS
+
+
+
+=-----------------
+
+node {
+   def dockerImageTag = "devopsexample${env.BUILD_NUMBER}"
+    stage('Deploy deploy command')
+{
+        sh "docker images"
+        sh "docker rm -f devopsexample "
+        sh "docker run --name devopsexample -d -p 2222:2222 vickeyyvickey/myapplication:latest"
+        //-Completion
+        echo "--------------------------------------------------------"
+        echo "View App deployed here: http://server-ip:2222"
+        echo "--------------------------------------------------------"
+    }
+}
+-----------------------
+
+
+connect       ssh -i 787.4.4.5 
+
+
+docker run --name devopsexample -d -p 2222:2222 vickeyyvickey/myapplication:latest
+
+$username.abc
+
+
+--------------------yaml 
+
+---
+- hosts: all
+  tasks:
+    - name: update all packages
+      yum: name=update
+
+
+PPT  https://drive.google.com/drive/folders/1dDW5YNLU7YgML45MFrr0ofEAOgpbNfZ7
+video :- https://drive.google.com/drive/folders/1qYTASfBRLo4DDtc6hQLkNb_GrRoR52R_
